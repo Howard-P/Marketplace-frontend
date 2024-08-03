@@ -18,7 +18,7 @@ import "./styles/main.css";
 import Nav from "./components/Nav";
 import NotFoundPage from "./components/NotFoundPage";
 import ProductTable from "./components/ProductTable";
-import { injectStore } from "./api/ApiCLient";
+import { injectStore } from "./api/ApiClient";
 import UserInventory from "./features/userInventory/UserInventory";
 
 /**

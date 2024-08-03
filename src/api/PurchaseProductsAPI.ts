@@ -1,4 +1,4 @@
-import ApiClient, { ApiResponse } from "./ApiCLient";
+import ApiClient, { ApiResponse } from "./ApiClient";
 
 export async function purchaseProducts(
   productId: number
