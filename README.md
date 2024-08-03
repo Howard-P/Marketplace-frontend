@@ -1,4 +1,5 @@
 [![CI](https://github.com/Howard-P/Marketplace-frontend/actions/workflows/CI.yml/badge.svg)](https://github.com/Howard-P/Marketplace-frontend/actions/workflows/CI.yml)
+
 [![Azure Static Web Apps CI/CD](https://github.com/Howard-P/Marketplace-frontend/actions/workflows/azure-static-web-apps-mango-mud-09830b10f.yml/badge.svg)](https://github.com/Howard-P/Marketplace-frontend/actions/workflows/azure-static-web-apps-mango-mud-09830b10f.yml)
 # React + TypeScript + Vite
 
