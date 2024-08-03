@@ -1,5 +1,5 @@
 import React, { Fragment, useEffect } from "react";
-import "../styles/ProductTable.css";
+import "../../styles/ProductTable.css";
 
 import {
   ColumnDef,
@@ -72,7 +72,7 @@ function UserInventory() {
   };
 
   ReactModal.setAppElement("#root");
-  const [selectedProduct, setSelectedProduct] = React.useState<Product[]>([]);
+  const [selectedProduct, setSelectedProduct] = React.useState<Product>();
   const [modalIsOpen, setIsOpen] = React.useState(false);
   const [sorting, setSorting] = React.useState<SortingState>([]);
 
@@ -85,7 +85,7 @@ function UserInventory() {
     []
   );
 
-  function openModal(product: Product[]) {
+  function openModal(product: Product) {
     setIsOpen(true);
     setSelectedProduct(product);
   }
