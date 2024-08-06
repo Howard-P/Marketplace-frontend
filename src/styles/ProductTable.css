@@ -1,59 +1,135 @@
-footer {
-  position: fixed;
-  bottom: 5%;
+.main table {
+  border: 2px solid black;
+  padding: 5px;
+  margin: auto;
   width: 100%;
 }
 
-.App {
-  text-align: center;
+.main table thead tr {
+  background-color: lightblue;
+  vertical-align: top;
 }
 
-.data-area-div {
-  display: flex;
-  flex-direction: column;
+.buyBtn {
+  background-color: #ff6e33;
+  color: white;
+  margin-right: 1em;
+  margin-bottom: 1em;
+}
+
+.tr-hover {
+  background-color: #fff;
+}
+
+.tr-hover:hover {
+  background-color: #77aff7;
+}
+
+.productDetails {
+  width: 100%;
+  text-align: left;
+  background-color: rgb(224, 224, 224);
+  transition: max-height 0.5s ease-out;
+  background: #e5feff;
+  overflow: hidden;
+  max-height: 0;
+}
+
+.productDetails p {
+  margin: 1em;
+}
+
+.select-none {
+  user-select: none;
+}
+
+.cursor-pointer {
+  cursor: pointer;
+}
+
+.items-center {
   align-items: center;
-  justify-content: space-evenly;
 }
 
-.navbarButton {
-  color: #fff !important;
-  padding: 0.5rem 1rem !important;
+.flex {
+  display: flex;
+  justify-content: center;
 }
 
-.navbarStyle {
-  padding: 0.5rem 1rem !important;
+.gap-2 {
+  gap: 0.5rem;
 }
 
-.table-responsive {
-  max-height: 39rem !important;
+.gap-1 {
+  gap: 0.25rem;
 }
 
-.tableColumn {
-  word-break: break-all;
+.rounded {
+  border-radius: 0.25rem;
 }
 
-.todo-form {
-  width: 60%;
+.border {
+  border-width: 1px;
 }
 
-.todo-list {
-  width: 60%;
+.p-1 {
+  padding: 0.25rem;
 }
 
-.todo-label {
-  font-size: large;
-  margin-right: 22%;
-  margin-left: 3%;
+.tb-expand {
+  max-height: 120px;
+  transition: max-height 0.5s ease-in;
 }
 
-.todo-view-btn {
-  float: right;
+.fade-in-row {
+  animation: fadeIn 1s;
+  -webkit-animation: fadeIn 1s;
+  -moz-animation: fadeIn 1s;
+  -o-animation: fadeIn 1s;
+  -ms-animation: fadeIn 1s;
 }
 
-.iconText {
-  margin: 0 0.5rem;
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }
 
-.profileButton {
-  margin: 0.5rem 0.5rem;
+@-moz-keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@-o-keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@-ms-keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }
