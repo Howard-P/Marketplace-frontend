@@ -56,6 +56,10 @@ export const LoginComponents = () => {
         redirectUri: "/",
       })
       .then((result) => {
+        appInsights.trackTrace({
+          message: "User logged in.",
+          severityLevel: SeverityLevel.Information,
+        });
         dispatch(setAccessToken(result.accessToken));
         dispatch(setIdTokenClaims(result.idTokenClaims));
       })
