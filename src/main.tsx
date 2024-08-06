@@ -19,6 +19,8 @@ import NotFoundPage from "./components/NotFoundPage";
 import ProductTable from "./components/ProductTable";
 import { injectStore } from "./api/ApiClient";
 import UserInventory from "./features/userInventory/UserInventory";
+import { AppInsightsContext } from "@microsoft/applicationinsights-react-js";
+import { reactPlugin } from "./ApplicationInsightsService";
 
 /**
  * MSAL should be instantiated outside of the component tree to prevent it from being re-instantiated on re-renders.
@@ -55,15 +57,17 @@ if (!root) throw Error("Failed to find the root element");
 
 root.render(
   <React.StrictMode>
-    <Provider store={store}>
-      <BrowserRouter>
-        <Routes>
-          <Route path="/" element={<Nav msalInstance={msalInstance} />} />
-          <Route index element={<ProductTable />} />
-          <Route path="inventory" element={<UserInventory />} />
-          <Route path="*" element={<NotFoundPage />} />
-        </Routes>
-      </BrowserRouter>
-    </Provider>
+    <AppInsightsContext.Provider value={reactPlugin}>
+      <Provider store={store}>
+        <BrowserRouter>
+          <Routes>
+            <Route path="/" element={<Nav msalInstance={msalInstance} />} />
+            <Route index element={<ProductTable />} />
+            <Route path="inventory" element={<UserInventory />} />
+            <Route path="*" element={<NotFoundPage />} />
+          </Routes>
+        </BrowserRouter>
+      </Provider>
+    </AppInsightsContext.Provider>
   </React.StrictMode>
 );
