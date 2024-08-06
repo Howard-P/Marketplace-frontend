@@ -17,6 +17,8 @@ import { useEffect } from "react";
 import { Link } from "react-router-dom";
 import MsalProp from "../../dataModelsTypes/MsalProp";
 import "../../styles/User.css";
+import { appInsights } from "../../ApplicationInsightsService";
+import { SeverityLevel } from "@microsoft/applicationinsights-web";
 
 export const LoginComponents = () => {
   const { instance, inProgress } = useMsal();
@@ -37,6 +39,10 @@ export const LoginComponents = () => {
         instance.initialize().then(() => {
           instance.acquireTokenSilent(accessTokenRequest).then((result) => {
             dispatch(setAccessToken(result.accessToken));
+            appInsights.trackTrace({
+              message: "Acquire access token silent succeed.",
+              severityLevel: SeverityLevel.Information,
+            });
           });
         });
       }
