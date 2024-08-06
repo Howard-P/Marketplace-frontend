@@ -12,7 +12,6 @@ import {
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 
 import { msalConfig } from "./authConfig";
-import App from "./components/ProductTable";
 
 import "./styles/main.css";
 import Nav from "./components/Nav";
@@ -64,7 +63,6 @@ root.render(
           <Route path="inventory" element={<UserInventory />} />
           <Route path="*" element={<NotFoundPage />} />
         </Routes>
-        <App />
       </BrowserRouter>
     </Provider>
   </React.StrictMode>
