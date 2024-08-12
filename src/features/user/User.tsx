@@ -11,6 +11,7 @@ import {
   selectAccessToken,
   selectActiveAccount,
   setAccessToken,
+  setActiveAccount,
   setIdTokenClaims,
 } from "./userSlice";
 import { useEffect } from "react";
@@ -29,6 +30,7 @@ export const LoginComponents = () => {
   useEffect(() => {
     const activeAccount = instance.getActiveAccount();
     if (activeAccount) {
+      dispatch(setActiveAccount(activeAccount));
       dispatch(setIdTokenClaims(activeAccount?.idTokenClaims));
       if (accessToken == null) {
         const accessTokenRequest: SilentRequest = {
@@ -38,6 +40,7 @@ export const LoginComponents = () => {
 
         instance.initialize().then(() => {
           instance.acquireTokenSilent(accessTokenRequest).then((result) => {
+            // Acquire token silent success
             dispatch(setAccessToken(result.accessToken));
             appInsights.trackTrace({
               message: "Acquire access token silent succeed.",
@@ -61,6 +64,7 @@ export const LoginComponents = () => {
           severityLevel: SeverityLevel.Information,
         });
         dispatch(setAccessToken(result.accessToken));
+        dispatch(setIdTokenClaims(result.idTokenClaims));
         dispatch(setIdTokenClaims(result.idTokenClaims));
       })
       .catch((error) => console.log(error));
@@ -87,7 +91,7 @@ export const LoginComponents = () => {
             User logged in: {activeAccountUser?.idTokenClaims?.name}
           </button>
           <div className="dropdown-content">
-            <Link to={"/UserListingTable"}>User Listing Table</Link>
+            <Link to={"/inventory"}>User Inventory</Link>
             <Link to={"/UserToken"}>User ID</Link>
             <a href="" onClick={handleProfileEdit}>
               Edit Profile

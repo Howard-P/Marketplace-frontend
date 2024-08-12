@@ -200,7 +200,10 @@ function ProductTable() {
               {table.getRowModel().rows.map((row) => {
                 return (
                   <Fragment key={row.id}>
-                    <tr>
+                    <tr
+                      onClick={row.getToggleExpandedHandler()}
+                      className="cursor-pointer tr-hover"
+                    >
                       {/* first row is a normal row */}
                       {row.getVisibleCells().map((cell) => {
                         return (
@@ -235,7 +238,7 @@ function ProductTable() {
         </>
       ) : (
         <>
-          <h1>Please Login In First.</h1>
+          <h1>Please Login In First. this is product table page</h1>
         </>
       )}
     </div>
