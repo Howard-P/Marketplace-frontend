@@ -9,7 +9,7 @@ import { loginRequest, b2cPolicies } from "../../authConfig";
 import { useAppDispatch, useAppSelector } from "../../app/hooks";
 import {
   selectAccessToken,
-  selectActiveAccount,
+  selectIdTokenClaims,
   setAccessToken,
   setActiveAccount,
   setIdTokenClaims,
@@ -24,7 +24,7 @@ import { SeverityLevel } from "@microsoft/applicationinsights-web";
 export const LoginComponents = () => {
   const { instance, inProgress } = useMsal();
   const accessToken = useAppSelector(selectAccessToken);
-  const activeAccountUser = useAppSelector(selectActiveAccount);
+  const idTokenClaims = useAppSelector(selectIdTokenClaims);
   const dispatch = useAppDispatch();
 
   useEffect(() => {
@@ -88,7 +88,7 @@ export const LoginComponents = () => {
       <AuthenticatedTemplate>
         <div className="dropdown">
           <button className="dropbtn">
-            User logged in: {activeAccountUser?.idTokenClaims?.name}
+            User logged in: {idTokenClaims?.name}
           </button>
           <div className="dropdown-content">
             <Link to={"/inventory"}>User Inventory</Link>

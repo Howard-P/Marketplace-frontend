@@ -238,7 +238,7 @@ function ProductTable() {
         </>
       ) : (
         <>
-          <h1>Please Login In First. this is product table page</h1>
+          <h1>Please Login In First.</h1>
         </>
       )}
     </div>

@@ -58,7 +58,7 @@ export interface ApiResponse {
   status: number;
 }
 
-const serverAddress = "http://localhost:5088";
+const serverAddress = "http://localhost:5152";
 
 const client = axios.create({
   baseURL: serverAddress,

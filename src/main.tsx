@@ -61,10 +61,11 @@ root.render(
       <Provider store={store}>
         <BrowserRouter>
           <Routes>
-            <Route path="/" element={<Nav msalInstance={msalInstance} />} />
-            <Route index element={<ProductTable />} />
-            <Route path="inventory" element={<UserInventory />} />
-            <Route path="*" element={<NotFoundPage />} />
+            <Route path="/" element={<Nav msalInstance={msalInstance} />}>
+              <Route index element={<ProductTable />} />
+              <Route path="inventory" element={<UserInventory />} />
+              <Route path="*" element={<NotFoundPage />} />
+            </Route>
           </Routes>
         </BrowserRouter>
       </Provider>

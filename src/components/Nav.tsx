@@ -1,13 +1,13 @@
 import User from "../features/user/User";
 import MsalProp from "../dataModelsTypes/MsalProp";
 import { Link, Outlet } from "react-router-dom";
-import gintama from "/gintama.jpg";
+import viteLogo from "/vite.svg";
 
 function Nav(props: MsalProp) {
   return (
     <>
       <div className="header">
-        <img src={gintama} className="logo" alt="gintama" />
+        <img src={viteLogo} className="logo" alt="Vite logo" />
         <nav>
           <ul>
             <li>
